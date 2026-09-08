@@ -47,27 +47,32 @@ export function Hero() {
           <br />
           GANHAM
           <br />
-          <span>FORMA.</span>
+          <span>FORMA<b className="forma-dot">.</b></span>
         </h1>
-        <div className="geometry" aria-hidden="true">
-          <i className="plane plane-one" />
-          <i className="plane plane-two" />
-          <i className="plane plane-three" />
-          <i className="plane plane-four" />
-          <span className="cross cross-one">+</span>
-          <span className="cross cross-two">+</span>
-          <span className="geometry-caption">DA IDEIA À MATÉRIA</span>
+        <div className="cinema-field" aria-hidden="true">
+          <div className="hero-reel hero-reel-a"><img src="/web-projects/johnny-cutz-home.png" alt="" /></div>
+          <div className="hero-reel hero-reel-b"><img src="/web-projects/johnny-cutz-booking.png" alt="" /></div>
+          <div className="hero-reel hero-reel-c"><img src="/web-projects/paleta-notavel.png" alt="" /></div>
+          <span className="cinema-wash" />
+          <span className="cinema-rule" />
         </div>
       </div>
       <div className="hero-bottom">
+        <div className="hero-action">
         <p>
           Comunicação visual
           <br />
           da criação à execução.
         </p>
-        <Link className="button button-light" href="/contacto/">
+        <div className="hero-contact-actions">
+        <Link className="button hero-contact-button" href="/contacto/">
           Fala-nos do teu projeto <span aria-hidden="true">↗</span>
         </Link>
+        <a className="button hero-contact-button hero-whatsapp-link" href="https://wa.me/351930493771" target="_blank" rel="noopener noreferrer">
+          Contactar
+        </a>
+        </div>
+        </div>
         <a className="scroll-cue" href="#areas">
           Explora as possibilidades <span aria-hidden="true">↓</span>
         </a>

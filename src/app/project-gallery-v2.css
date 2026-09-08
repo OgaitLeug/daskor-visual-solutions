@@ -1,0 +1,10 @@
+/* Final cascade for the editorial mockup presentation. */
+.project-mockup,
+.mockup-screen,
+.mockup-screen img {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mockup-screen { transform: none; }
+}

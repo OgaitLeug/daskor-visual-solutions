@@ -10,6 +10,7 @@ export type Project = {
   approach: string;
   result: string | null;
   projectType: "real" | "conceptual";
+  url?: string;
 };
 export const projects: Project[] = [
   {
@@ -31,5 +32,20 @@ export const projects: Project[] = [
       "Website com experiência de marcação, serviços e preços. Design do preçário e aplicação de elementos gráficos no espaço, a partir do logótipo fornecido pelo cliente.",
     result: null,
     projectType: "real",
+    url: "https://www.johnnycutz-studio.com",
+  },
+  {
+    title: "Paleta Notável",
+    slug: "paleta-notavel",
+    category: ["Digital"],
+    services: ["Desenvolvimento do website"],
+    description: "Uma presença digital para uma marca de publicidade com personalidade cromática.",
+    heroImage: "/web-projects/paleta-notavel-home.jpg",
+    gallery: ["/web-projects/paleta-notavel-home.jpg"],
+    challenge: "Criar um espaço digital claro, expressivo e fácil de explorar.",
+    approach: "Estrutura de apresentação, navegação por áreas e uma direção visual construída a partir das cores da marca.",
+    result: null,
+    projectType: "real",
+    url: "https://www.paleta-notavel.pt",
   },
 ];

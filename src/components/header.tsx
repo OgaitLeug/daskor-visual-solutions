@@ -55,15 +55,14 @@ export function Header() {
         aria-label="Navegação"
       >
         <div className="menu-top">
-          <span>DASKOR / NAVEGAÇÃO</span>
+          <span>DASKOR · NAVEGAÇÃO</span>
           <button onClick={close} autoFocus>
             Fechar ×
           </button>
         </div>
         <nav aria-label="Navegação mobile">
-          {[{ label: "Início", href: "/" }, ...site.navigation].map((n, i) => (
+          {[{ label: "Início", href: "/" }, ...site.navigation].map((n) => (
             <Link key={n.href} href={n.href} onClick={close}>
-              <small>0{i + 1}</small>
               {n.label}
               <span aria-hidden="true">↗</span>
             </Link>

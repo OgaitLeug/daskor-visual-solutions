@@ -1,24 +1,25 @@
 import type { Metadata } from "next";
-import { Featured, Closing } from "@/components/sections";
+import { Featured, PaletaProject, Closing } from "@/components/sections";
 export const metadata: Metadata = {
   title: "Projetos",
   description:
-    "Projetos DASKOR. Conhece a intervenção digital e no espaço do Johnny Cutz Studio.",
+    "Projetos DASKOR. Conhece projetos digitais e de comunicação visual.",
   alternates: { canonical: "/projetos/" },
 };
 export default function Projects() {
   return (
     <>
       <section className="page-heading section">
-        <p className="eyebrow">TRABALHO REAL / DASKOR</p>
+        <p className="eyebrow">TRABALHO REAL · DASKOR</p>
         <h1>
           Ideias que
           <br />
           já têm forma<span>.</span>
         </h1>
         <p>Criação e execução, vistas de perto.</p>
-      </section>
+  </section>
       <Featured full />
+      <PaletaProject full />
       <Closing />
     </>
   );

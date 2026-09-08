@@ -4,25 +4,25 @@ import { areas, site } from "@/content/site";
 import { projects } from "@/content/projects";
 export function Areas() {
   return (
-    <section className="light-section section" id="areas">
-      <div className="intro">
-        <p className="eyebrow">01 / O QUE FAZEMOS</p>
-        <div>
-          <h2>
+    <section className="light-section services-section" id="areas">
+      <div className="intro section">
+        <p className="eyebrow">O QUE FAZEMOS</p>
+          <div>
+            <h2>
             Uma ideia.
             <br />
-            Várias formas
-            <br />
-            de a concretizar.
-          </h2>
-          <p className="intro-copy">
-            Criamos identidades, desenvolvemos presenças digitais e levamos a
-            comunicação visual para o mundo físico.{" "}
-            <strong>Do projeto completo à etapa de que precisas.</strong>
-          </p>
+              Várias formas
+              <br />
+              de a concretizar.
+            </h2>
+            <p className="intro-copy">
+              Criamos identidades, desenvolvemos presenças digitais e levamos a
+              comunicação visual para o mundo físico.{" "}
+              <strong>Do projeto completo à etapa de que precisas.</strong>
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="areas">
+        <div className="areas section" id="areas-list">
         {areas.map((a, i) => (
           <details className="area" key={a.id} id={a.id}>
             <summary>
@@ -53,7 +53,7 @@ export function Featured({ full = false }: { full?: boolean }) {
     <section className="project-section section" id={p.slug}>
       <div className="section-heading">
         <p className="eyebrow">
-          {full ? "01 / PROJETO DASKOR" : "02 / PROJETO EM DESTAQUE"}
+          {full ? "PROJETO DASKOR" : "PROJETO EM DESTAQUE"}
         </p>
         {!full && (
           <Link href="/projetos/">
@@ -62,21 +62,17 @@ export function Featured({ full = false }: { full?: boolean }) {
         )}
       </div>
       <div className="project-layout">
-        <div className="project-placeholder">
-          <span className="eyebrow">DIGITAL × ESPAÇO</span>
-          <div className="project-wordmark">
-            JOHNNY
-            <br />
-            CUTZ<span>STUDIO</span>
+        <div className="project-placeholder project-gallery">
+          <div className="project-mockup" aria-label="Mockup do website Johnny Cutz Studio">
+            <figure className="mockup-screen mockup-screen-desktop">
+              <span className="mockup-bar"><i /><i /><i /></span>
+              <img src="/web-projects/johnny-cutz-home.png" alt="Página inicial do website Johnny Cutz Studio" />
+            </figure>
           </div>
-          <p>
-            Registo visual do projeto
-            <br />
-            <strong>Imagens a adicionar</strong>
-          </p>
+          <span className="eyebrow">DIGITAL × ESPAÇO · PROJETO REAL</span>
         </div>
         <div className="project-copy">
-          <p className="eyebrow">{p.category.join(" / ")} · PROJETO REAL</p>
+          <p className="eyebrow">{p.category.join(" · ")} · PROJETO REAL</p>
           <h2>{p.title}</h2>
           <p>{p.description}</p>
           <ul>
@@ -88,6 +84,11 @@ export function Featured({ full = false }: { full?: boolean }) {
             Logótipo fornecido pelo cliente. A DASKOR não criou a identidade
             original.
           </p>
+          {full && p.url && (
+            <a className="text-link project-live-link" href={p.url} target="_blank" rel="noopener noreferrer">
+              Ver website <span aria-hidden="true">↗</span>
+            </a>
+          )}
           {!full && (
             <Link className="text-link" href="/projetos/#johnny-cutz-studio">
               Conhecer o projeto <span aria-hidden="true">↗</span>
@@ -112,10 +113,69 @@ export function Featured({ full = false }: { full?: boolean }) {
     </section>
   );
 }
+
+export function PaletaProject({ full = false }: { full?: boolean }) {
+  const p = projects[1];
+  return (
+    <section className="project-section section paleta-project" id={p.slug}>
+      <div className="section-heading">
+        <p className="eyebrow">
+          {full ? "PROJETO DASKOR" : "PROJETO EM DESTAQUE"}
+        </p>
+      </div>
+      <div className="project-layout">
+        <div className="project-placeholder project-gallery paleta-project-gallery">
+          <div className="project-mockup" aria-label="Mockup do website Paleta Notável">
+            <figure className="mockup-screen mockup-screen-desktop">
+              <span className="mockup-bar"><i /><i /><i /></span>
+              <img src={p.heroImage ?? ""} alt="Homepage do website Paleta Notável" />
+            </figure>
+          </div>
+          <span className="eyebrow">DIGITAL · PROJETO REAL</span>
+        </div>
+        <div className="project-copy">
+          <p className="eyebrow">{p.category.join(" · ")} · PROJETO REAL</p>
+          <h2>{p.title}</h2>
+          <p>{p.description}</p>
+          <ul>
+            {p.services.map((s) => (
+              <li key={s}>{s}</li>
+            ))}
+          </ul>
+          {full && p.url && (
+            <a className="text-link project-live-link" href={p.url} target="_blank" rel="noopener noreferrer">
+              Ver website <span aria-hidden="true">↗</span>
+            </a>
+          )}
+          {!full && (
+            <Link className="text-link" href={`/projetos/#${p.slug}`}>
+              Conhecer o projeto <span aria-hidden="true">↗</span>
+            </Link>
+          )}
+        </div>
+      </div>
+      {full && (
+        <div className="case-details">
+          <div>
+            <p className="eyebrow">CONTEXTO</p>
+            <h3>Uma marca com espaço para cor.</h3>
+            <p>{p.challenge}</p>
+          </div>
+          <div>
+            <p className="eyebrow">INTERVENÇÃO</p>
+            <h3>Uma presença digital clara.</h3>
+            <p>{p.approach}</p>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
 export function FieldExperience() {
   return (
     <section className="field-section section">
-      <p className="eyebrow">03 / APLICAÇÃO E MONTAGEM</p>
+      <p className="eyebrow">APLICAÇÃO E MONTAGEM</p>
       <div className="field-layout">
         <h2>
           Experiência
@@ -150,27 +210,40 @@ export function FieldExperience() {
         </figure>
         <figure>
           <Image
-            src="/images/espaco-colgate.webp"
+            src="/images/experiencia-bacardi.jpg"
             width={1600}
             height={1200}
-            alt="Elementos gráficos Colgate aplicados num espaço de ativação, em colaboração profissional anterior"
+            alt="Aplicação de vinil Bacardi num espaço de ativação, em colaboração profissional anterior"
             sizes="(min-width: 1000px) 25vw, 88vw"
           />
           <figcaption>
-            <span>Espaço de marca</span>
+            <span>Aplicação em espaço</span>
+            <span>Vinil</span>
+          </figcaption>
+        </figure>
+        <figure>
+          <Image
+            src="/images/experiencia-real-techniques.jpeg"
+            width={1600}
+            height={900}
+            alt="Expositor Real Techniques aplicado em ponto de venda, em colaboração profissional anterior"
+            sizes="(min-width: 1000px) 25vw, 88vw"
+          />
+          <figcaption>
+            <span>Expositor de marca</span>
             <span>Montagem</span>
           </figcaption>
         </figure>
         <figure>
           <Image
-            src="/images/espaco-heineken.webp"
+            src="/images/experiencia-peugeot.jpg"
             width={1600}
-            height={900}
-            alt="Grafismo Heineken aplicado num ambiente de evento, em colaboração profissional anterior"
+            height={1200}
+            alt="Aplicação de película microperfurada num espaço Peugeot, em colaboração profissional anterior"
             sizes="(min-width: 1000px) 25vw, 88vw"
           />
           <figcaption>
-            <span>Comunicação em evento</span>
+            <span>Película microperfurada</span>
             <span>Aplicação</span>
           </figcaption>
         </figure>
@@ -181,7 +254,7 @@ export function FieldExperience() {
 export function Process() {
   return (
     <section className="section light-section">
-      <p className="eyebrow">04 / COMO TRABALHAMOS</p>
+      <p className="eyebrow">COMO TRABALHAMOS</p>
       <h2 className="process-title">
         Cada projeto tem
         <br />o seu ponto de partida.
@@ -198,6 +271,9 @@ export function Process() {
         ].map(([title, text], i) => (
           <div key={title}>
             <span className="eyebrow">0{i + 1} /</span>
+            <svg className="process-check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12l4 4L19 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
             <h3>{title}</h3>
             <p>{text}</p>
           </div>
