@@ -11,9 +11,9 @@ export default function Home() {
     <div className="home-shell">
       <Hero />
       <Areas />
-      <Featured />
-      <FieldExperience />
       <Process />
+      <FieldExperience />
+      <Featured />
       <Closing />
     </div>
   );

@@ -193,6 +193,9 @@ export function FieldExperience() {
             anteriores. Design e produção não realizados pela DASKOR. As marcas
             apresentadas não são identificadas como clientes DASKOR.
           </p>
+          <Link className="field-cta" href="/contacto/">
+            Precisas de apoio na montagem? <span aria-hidden="true">↗</span>
+          </Link>
         </div>
       </div>
       <div className="field-gallery">
@@ -323,6 +326,7 @@ export function Footer() {
       </div>
       <nav className="footer-nav" aria-label="Navegação do rodapé">
         <Link href="/">Início</Link>
+        <Link href="/contacto/?area=montagens">Montagens</Link>
         <Link href="/projetos/">Projetos</Link>
         <Link href="/contacto/">Contacto</Link>
       </nav>

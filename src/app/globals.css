@@ -549,6 +549,26 @@ button {
 .field-section {
   background: #17191c;
 }
+.field-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 26px;
+  margin-top: 30px;
+  padding: 13px 16px;
+  color: var(--paper);
+  border: 1px solid #f4f4f080;
+  font-size: 13px;
+  text-decoration: none;
+  transition: border-color .2s ease, background-color .2s ease;
+}
+.field-cta span {
+  font-size: 18px;
+  line-height: 1;
+}
+.field-cta:hover {
+  background: #ffffff0d;
+  border-color: var(--orange);
+}
 .field-layout {
   display: grid;
   gap: 30px;
@@ -881,8 +901,12 @@ button {
   }
   .footer-nav {
     display: grid;
+    grid-template-columns: repeat(2, max-content);
     gap: 12px;
     justify-items: start;
+  }
+  .footer-nav a[href="/contacto/"] {
+    grid-column: 1;
   }
   .footer-socials {
     justify-self: end;
@@ -1067,12 +1091,21 @@ button {
     text-decoration: underline;
     text-underline-offset: 7px;
   }
+  .desktop-nav > a:not(.nav-cta):hover {
+    text-decoration: underline;
+    text-underline-offset: 7px;
+  }
   .nav-cta {
     border: 1px solid #626267;
     padding: 12px 20px;
     display: flex;
     gap: 28px;
     align-items: center;
+    transition: border-color .2s ease, background-color .2s ease;
+  }
+  .nav-cta:hover {
+    background: #ffffff0d;
+    border-color: var(--orange);
   }
   .nav-cta span {
     font-size: 21px;
@@ -1527,10 +1560,12 @@ button {
   background: transparent;
   color: #fff;
   border: 1px solid #fff;
+  transition: border-color .2s ease, background-color .2s ease;
 }
 
-.hero-contact-button:hover {
-  background: rgb(255 255 255 / 8%);
+.hero-contact-button:not(.hero-whatsapp-link):hover {
+  background: #ffffff0d;
+  border-color: var(--orange);
 }
 
 .hero-contact-actions {
@@ -1562,6 +1597,8 @@ button {
 
 .hero-whatsapp-link:hover {
   background: transparent;
+  color: var(--orange);
+  text-decoration-color: var(--orange);
 }
 
 .hero h1 .forma-dot {

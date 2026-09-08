@@ -15,7 +15,7 @@ export function ContactForm() {
       `Empresa: ${data.get("company") || "—"}`,
       `Email: ${data.get("email")}`,
       `Telefone: ${data.get("phone") || "—"}`,
-      `Área: ${areas.find((a) => a.id === area)?.title || "Projeto multidisciplinar"}`,
+      `Área: ${area === "montagens" ? "Montagens" : areas.find((a) => a.id === area)?.title || "Projeto multidisciplinar"}`,
       `\n${data.get("message")}`,
       data.get("stage") ? `\nPonto de partida: ${data.get("stage")}` : "",
       data.get("timing") ? `Prazo: ${data.get("timing")}` : "",
@@ -66,6 +66,7 @@ export function ContactForm() {
               {a.title}
             </option>
           ))}
+          <option value="montagens">Montagens</option>
         </select>
       </label>
       <label>
