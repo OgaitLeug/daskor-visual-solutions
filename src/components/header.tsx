@@ -15,7 +15,7 @@ export function Header() {
     <header className="header">
       <Link href="/" aria-label="DASKOR — início" className="logo">
         <Image
-          src="/brand/logo-white.webp"
+          src="/brand/logo-negative-color.webp"
           width={144}
           height={76}
           alt="DASKOR — Soluções Visuais"

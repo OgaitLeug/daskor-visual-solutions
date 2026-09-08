@@ -23,7 +23,7 @@ O requisito explícito de Next.js foi preservado em vez de substituir a stack pe
 
 ## Proveniência e conteúdo
 
-Logótipo: `daskor_solutions_logoV4.pdf`, quatro páginas confirmadas visualmente: colorido/claro, colorido/escuro, preto/claro, branco/escuro. Os ficheiros WebP são rasterizações das versões oficiais, recortando apenas margens vazias. A versão branca é utilizada sobre preto. O favicon contém a mesma versão oficial.
+Logótipo: `daskor_solutions_logoV4.pdf`, quatro páginas confirmadas visualmente: colorido/claro, colorido/escuro, preto/claro, branco/escuro. Os ficheiros WebP são rasterizações das versões oficiais, recortando apenas margens vazias. A versão negativa com cores é utilizada no cabeçalho sobre preto. O favicon mantém a versão branca oficial.
 
 Fotografias: autocarro_depois.jpg, IMG_20260709_011003.jpg e IMG-20260705-WA0018.jpeg, fornecidas na pasta triagem. Participação na aplicação/montagem confirmada pelo utilizador nesta tarefa. São experiência profissional anterior: não atribuir design, produção ou relação comercial à DASKOR. Todos os originais foram preservados.
 
@@ -38,3 +38,4 @@ Email, telefone e WhatsApp confirmados pelo utilizador. Formulário com validaç
 Sites é usado para revisão privada. Canonical e sitemap apontam para o domínio oficial pretendido, daskor.pt. Antes de publicação nesse domínio: substituir os placeholders do case study, configurar envio direto se pretendido e verificar a informação legal aplicável com dados fornecidos pela DASKOR. Não foram inventados NIF, morada ou textos legais.
 
 Versão Next.js verificada no registo npm; política de suporte: https://nextjs.org/support-policy.
+
