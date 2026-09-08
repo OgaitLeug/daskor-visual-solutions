@@ -304,12 +304,58 @@ export function Closing() {
 export function Footer() {
   return (
     <footer className="footer">
-      <div>
-        <strong>DASKOR — Soluções Visuais</strong>
-        <p>{site.location}</p>
+      <div className="footer-logo-column">
+        <img
+          className="footer-mark"
+          src={assetPath("/brand/logo-negative-transparent.png")}
+          alt="DASKOR — Soluções Visuais"
+          width={170}
+          height={90}
+        />
       </div>
-      <Link href="/contacto/">Contacto ↗</Link>
-      <span>daskor.pt</span>
+      <div className="footer-brand">
+        <strong>DASKOR — Soluções Visuais</strong>
+        <div className="footer-contact">
+          <a href={`tel:${site.contact.phone}`}>+351 930 493 771</a>
+          <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+          <p>{site.location}</p>
+        </div>
+      </div>
+      <nav className="footer-nav" aria-label="Navegação do rodapé">
+        <Link href="/">Início</Link>
+        <Link href="/projetos/">Projetos</Link>
+        <Link href="/contacto/">Contacto</Link>
+      </nav>
+      <div className="footer-socials" aria-label="Redes sociais">
+        <span className="footer-social" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.4" cy="6.7" r="1" className="footer-social-dot" />
+          </svg>
+        </span>
+        <span className="footer-social" aria-label="Facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14 21v-8h2.7l.4-3H14V8.1c0-.9.3-1.5 1.6-1.5h1.7V4a22 22 0 0 0-2.5-.1c-2.5 0-4.2 1.5-4.2 4.3V10H8v3h2.6v8" />
+          </svg>
+        </span>
+        <a
+          className="footer-social footer-social-link"
+          href={`https://wa.me/${site.contact.whatsapp}?text=${encodeURIComponent(site.contact.whatsappMessage)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+          title="WhatsApp"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 11.4a8 8 0 0 1-11.7 7.1L4 20l1.5-4.2A8 8 0 1 1 20 11.4Z" />
+            <path d="M8.4 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.3.1.5-.1.7l-.5.6c-.1.2-.1.3 0 .5.4.7 1.1 1.4 1.8 1.8.2.1.3.1.5 0l.6-.5c.2-.2.4-.2.7-.1l1.7.7c.3.1.4.3.4.5v.5c0 .3-.1.5-.4.7-.5.3-1.2.4-1.8.2-1.1-.3-2.4-1-3.5-2.1-1.1-1.1-1.8-2.4-2.1-3.5-.2-.6-.1-1.3.2-1.8Z" />
+          </svg>
+        </a>
+        <div className="footer-bottom">
+          <span>daskor.pt</span>
+        </div>
+      </div>
     </footer>
   );
 }

@@ -6,6 +6,16 @@ import { Footer } from "@/components/sections";
 import { site } from "@/content/site";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  icons: {
+    icon: [
+      {
+        url: "/favicon-color.png",
+        type: "image/png",
+        sizes: "64x64",
+      },
+    ],
+    shortcut: ["/favicon-color.png"],
+  },
   title: { default: "DASKOR — Soluções Visuais", template: "%s — DASKOR" },
   description:
     "Comunicação visual da criação à execução. Marca, Digital, Produção, Espaço e Estrada. Lisboa · Projetos em todo o país.",
