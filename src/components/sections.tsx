@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { areas, site } from "@/content/site";
 import { projects } from "@/content/projects";
+import { assetPath } from "@/lib/asset-path";
 export function Areas() {
   return (
     <section className="light-section services-section" id="areas">
@@ -66,7 +67,7 @@ export function Featured({ full = false }: { full?: boolean }) {
           <div className="project-mockup" aria-label="Mockup do website Johnny Cutz Studio">
             <figure className="mockup-screen mockup-screen-desktop">
               <span className="mockup-bar"><i /><i /><i /></span>
-              <img src="/web-projects/johnny-cutz-home.png" alt="Página inicial do website Johnny Cutz Studio" />
+              <img src={assetPath("/web-projects/johnny-cutz-home.png")} alt="Página inicial do website Johnny Cutz Studio" />
             </figure>
           </div>
           <span className="eyebrow">DIGITAL × ESPAÇO · PROJETO REAL</span>
@@ -128,7 +129,7 @@ export function PaletaProject({ full = false }: { full?: boolean }) {
           <div className="project-mockup" aria-label="Mockup do website Paleta Notável">
             <figure className="mockup-screen mockup-screen-desktop">
               <span className="mockup-bar"><i /><i /><i /></span>
-              <img src={p.heroImage ?? ""} alt="Homepage do website Paleta Notável" />
+              <img src={assetPath(p.heroImage ?? "")} alt="Homepage do website Paleta Notável" />
             </figure>
           </div>
           <span className="eyebrow">DIGITAL · PROJETO REAL</span>
@@ -197,7 +198,7 @@ export function FieldExperience() {
       <div className="field-gallery">
         <figure>
           <Image
-            src="/images/autocarro.webp"
+            src={assetPath("/images/autocarro.webp")}
             width={1600}
             height={1200}
             alt="Decoração gráfica aplicada na lateral de um autocarro, em colaboração profissional anterior"
@@ -210,7 +211,7 @@ export function FieldExperience() {
         </figure>
         <figure>
           <Image
-            src="/images/experiencia-bacardi.jpg"
+            src={assetPath("/images/experiencia-bacardi.jpg")}
             width={1600}
             height={1200}
             alt="Aplicação de vinil Bacardi num espaço de ativação, em colaboração profissional anterior"
@@ -223,7 +224,7 @@ export function FieldExperience() {
         </figure>
         <figure>
           <Image
-            src="/images/experiencia-real-techniques.jpeg"
+            src={assetPath("/images/experiencia-real-techniques.jpeg")}
             width={1600}
             height={900}
             alt="Expositor Real Techniques aplicado em ponto de venda, em colaboração profissional anterior"
@@ -236,7 +237,7 @@ export function FieldExperience() {
         </figure>
         <figure>
           <Image
-            src="/images/experiencia-peugeot.jpg"
+            src={assetPath("/images/experiencia-peugeot.jpg")}
             width={1600}
             height={1200}
             alt="Aplicação de película microperfurada num espaço Peugeot, em colaboração profissional anterior"

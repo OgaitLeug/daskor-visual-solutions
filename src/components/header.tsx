@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { usePathname } from "next/navigation";
 import { site } from "@/content/site";
+import { assetPath } from "@/lib/asset-path";
 export function Header() {
   const dialog = useRef<HTMLDialogElement>(null);
   const pathname = usePathname();
@@ -15,7 +16,7 @@ export function Header() {
     <header className="header">
       <Link href="/" aria-label="DASKOR — início" className="logo">
         <Image
-          src="/brand/logo-negative-color.webp"
+          src={assetPath("/brand/logo-negative-color.webp")}
           width={144}
           height={76}
           alt="DASKOR — Soluções Visuais"

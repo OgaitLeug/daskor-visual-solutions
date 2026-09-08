@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { assetPath } from "@/lib/asset-path";
+import type { CSSProperties } from "react";
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -49,10 +51,10 @@ export function Hero() {
           <br />
           <span>FORMA<b className="forma-dot">.</b></span>
         </h1>
-        <div className="cinema-field" aria-hidden="true">
-          <div className="hero-reel hero-reel-a"><img src="/web-projects/johnny-cutz-home.png" alt="" /></div>
-          <div className="hero-reel hero-reel-b"><img src="/web-projects/johnny-cutz-booking.png" alt="" /></div>
-          <div className="hero-reel hero-reel-c"><img src="/web-projects/paleta-notavel.png" alt="" /></div>
+        <div className="cinema-field" aria-hidden="true" style={{ "--brand-logo-url": `url("${assetPath("/brand/logo-negative-color.webp")}")` } as CSSProperties}>
+          <div className="hero-reel hero-reel-a"><img src={assetPath("/web-projects/johnny-cutz-home.png")} alt="" /></div>
+          <div className="hero-reel hero-reel-b"><img src={assetPath("/web-projects/johnny-cutz-booking.png")} alt="" /></div>
+          <div className="hero-reel hero-reel-c"><img src={assetPath("/web-projects/paleta-notavel.png")} alt="" /></div>
           <span className="cinema-wash" />
           <span className="cinema-rule" />
         </div>
